@@ -91,23 +91,24 @@ a{
       left: 0;
   }
   #banner{
+      /* border: 1px solid #000; */
+      /* position: relative; */
       width: 7.5rem;
       height: 3rem;
   }
   .banner_view{
       width: 7.5rem;
       height: 3rem;
-      position: relative;
+      /* position: relative; */
   }
   .banner_box{
-      width: 22.5rem;
-      overflow: hidden;
-  }
-  .banner_box div{
-      width: 7.5rem;
-      float: left;
+      width: 37.5rem;
+      font-size: 0;
+      height: 3rem;
   }
   .banner_box img{
+      display: inline-block;
+      /* z-index: 30; */
       width: 7.5rem;
       height: 3rem;
   }

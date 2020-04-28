@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="wedding.css">
+	<link rel="stylesheet" href="wedding.css">
+	<script src="iscroll.Veb.js"></script>
+
 </head>
 <body>
     <div class="header">
@@ -22,9 +24,11 @@
 			<div class="banner_view">
 				<div id="banner">
 					<div class="banner_box">
-						<div><a href=""><img src="images/index-banner01.jpg" alt=""></a></div>
-						<div><a href=""><img src="images/index-banner02.jpg" alt=""></a></div>
-						<div><a href=""><img src="images/index-banner03.jpg" alt=""></a></div>
+						<img src="images/index-banner03.jpg" alt="">
+						<img src="images/index-banner01.jpg" alt="">
+						<img src="images/index-banner02.jpg" alt="">
+						<img src="images/index-banner03.jpg" alt="">
+						<img src="images/index-banner01.jpg" alt="">
 					</div>
 				</div>
 				<ul class="banner_btn"></ul>
@@ -219,4 +223,33 @@
 		</div>
     </div>
 </body>
+<script>
+	var isc=new iScroll("banner",{
+    // 开启元素捕捉
+    snap:true,
+    // 关闭惯性
+    momentum:false,
+    // 隐藏水平滚动条
+    // hScrollbar:false,
+    // 设置切换阀值
+    snapThreshold:100,
+    // 滚动结束回调
+    onScrollEnd:function(){
+        // 滚动结束获取当前页码
+        console.log(this.currPageX)
+       // 滚动到假的第一张 瞬间到达真的第一张
+        if(this.currPageX==4){
+            this.scrollToPage(1,0,0);
+        }
+        // 滚动到假的最后第一张 瞬间到达真的最后一张
+        if(this.currPageX==0){
+            this.scrollToPage(3,0,0);
+        }
+
+    }
+})
+
+// 默认滚动到第二张  第二张才是真正的第一张
+isc.scrollToPage(1,0,0);
+</script>
 </html>
